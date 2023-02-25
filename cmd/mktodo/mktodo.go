@@ -3,6 +3,7 @@ package mktodo
 import (
 	"context"
 	"fmt"
+	"net/http"
 	"strings"
 
 	"github.com/kolbymcgarrah/mktodo/internal/config"
@@ -35,7 +36,7 @@ func (t *todo) runCmd(*cli.Context) error {
 	// placeholder
 	_ = ctx
 	config.CollectMissingArgs(t.config.Args)
-	hc := github.NewHTTPCreator()
+	hc := github.NewHTTPCreator(http.DefaultClient)
 	url, err := hc.CreateIssue(ctx, github.Request{
 		Owner:   t.config.Args.Owner,
 		Repo:    t.config.Args.Repo,
