@@ -36,6 +36,9 @@ func (t *todo) runCmd(*cli.Context) error {
 	// placeholder
 	_ = ctx
 	config.CollectMissingArgs(t.config.Args)
+
+	fmt.Println("Reaching out to Github to create your Issue")
+
 	hc := github.NewHTTPCreator(http.DefaultClient)
 	url, err := hc.CreateIssue(ctx, github.Request{
 		Owner:   t.config.Args.Owner,
@@ -50,6 +53,6 @@ func (t *todo) runCmd(*cli.Context) error {
 	}
 	// make request
 
-	fmt.Printf("success! Your Issue has been created and can be viewed here: %#v", strings.Replace(url, "%", "", -1))
+	fmt.Printf("Success!\nYour Issue has been created and can be viewed here: %#v\n", strings.Replace(url, "%", "", -1))
 	return nil
 }
