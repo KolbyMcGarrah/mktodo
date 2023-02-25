@@ -50,6 +50,6 @@ func (t *todo) runCmd(*cli.Context) error {
 	}
 	// make request
 
-	fmt.Printf("\n\nsuccess! Your Issue has been created and can be viewed here: %#v", strings.Replace(url, "%", "", -1))
+	fmt.Printf("success! Your Issue has been created and can be viewed here: %#v", strings.Replace(url, "%", "", -1))
 	return nil
 }

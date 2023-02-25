@@ -12,12 +12,12 @@ import (
 const BaseURL = "https://api.github.com/repos/%s/%s/issues"
 
 type HTTPCreator struct {
-	client http.Client
+	client *http.Client
 }
 
-func NewHTTPCreator() *HTTPCreator {
+func NewHTTPCreator(client *http.Client) *HTTPCreator {
 	return &HTTPCreator{
-		client: *http.DefaultClient,
+		client: client,
 	}
 }
 
@@ -30,6 +30,9 @@ func (hc *HTTPCreator) CreateIssue(ctx context.Context, r Request) (string, erro
 	res, err := hc.client.Do(req)
 	if err != nil {
 		return "", err
+	}
+	if res.StatusCode == http.StatusUnauthorized {
+		return "", fmt.Errorf("unauthorized")
 	}
 	var resp Response
 	err = json.NewDecoder(res.Body).Decode(&resp)
