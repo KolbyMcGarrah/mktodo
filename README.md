@@ -6,22 +6,22 @@ A github personal access token is required to be able to use the service. I recc
 
 To list all commands run
 ```
-ghtodo -h
+mktodo -h
 ```
 
 To make a github issue run 
 ```
-ghtodo make
+mktodo make
 ```
 or 
 ```
-ghtodo m
+mktodo m
 ```
 Additional flags can be passed to supply known info (I reccommend using the --git-token flag and setting it equal to the user access token from your bashrc/zshrc file).
 
 To see the list of all flags run 
 ```
-ghtodo make help
+mktodo make help
 ``` 
 Any information not passed in flags will be need to be input from the terminal.
 
