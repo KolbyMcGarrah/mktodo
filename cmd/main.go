@@ -11,6 +11,7 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Flags = nil
+	app.Usage = "a tool for managing github issues from the command line"
 	app.Commands = []*cli.Command{
 		mktodo.NewMkTodoCmd(),
 	}

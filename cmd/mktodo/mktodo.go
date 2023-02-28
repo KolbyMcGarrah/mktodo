@@ -24,8 +24,10 @@ func NewTodo() *todo {
 func NewMkTodoCmd() *cli.Command {
 	todo := NewTodo()
 	cmd := cli.Command{
-		Name:   "mk",
-		Action: todo.runCmd,
+		Name:    "make",
+		Action:  todo.runCmd,
+		Usage:   "allows you to make a github issue from the command line",
+		Aliases: []string{"m"},
 	}
 	cmd.Flags = append(cmd.Flags, config.ArgFlags(todo.config.Args)...)
 	return &cmd
