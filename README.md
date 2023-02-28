@@ -11,7 +11,7 @@ ghtodo -h
 
 To make a github issue run 
 ```
-ghtodo mk
+ghtodo make
 ```
 or 
 ```
@@ -21,6 +21,21 @@ Additional flags can be passed to supply known info (I reccommend using the --gi
 
 To see the list of all flags run 
 ```
-ghtodo mk help
+ghtodo make help
 ``` 
 Any information not passed in flags will be need to be input from the terminal.
+
+## Installation
+
+This is available to install via [homebrew](https://brew.sh/).
+After installing homebrew, you will need to connect to the tap with the following command
+```
+brew tap kolbymcgarrah/kolbymcgarrah
+```
+
+After that succeeds, you can install the cli tool with
+```
+brew install kolbymcgarrah/kolbymcgarrah/mktodo
+```
+
+You may need to have go installed on your machine which can be done by following [these instructions](https://go.dev/doc/install)
