@@ -24,11 +24,3 @@ To see the list of all flags run
 ghtodo mk help
 ``` 
 Any information not passed in flags will be need to be input from the terminal.
-
-## Installation
-Currently this can be installed by copying the repo or downloading the `ghtodo` binary.
-After aquiring the binary, mv it to your `/usr/local/bin` folder and then ensure you have the proper permissions by running
-```
-chmod + /usr/local/bin/ghtodo
-```
-then you can run the command via the terminal with the `ghtodo` command.
