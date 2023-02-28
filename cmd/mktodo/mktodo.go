@@ -24,7 +24,7 @@ func NewTodo() *todo {
 func NewMkTodoCmd() *cli.Command {
 	todo := NewTodo()
 	cmd := cli.Command{
-		Name:   "mktodo",
+		Name:   "mk",
 		Action: todo.runCmd,
 	}
 	cmd.Flags = append(cmd.Flags, config.ArgFlags(todo.config.Args)...)

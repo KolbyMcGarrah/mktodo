@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"testing"
 
@@ -27,7 +27,7 @@ func TestCreateIssue(t *testing.T) {
 			request: github.Request{},
 			client: &http.Client{Transport: RoundTripFunc(func(*http.Request) *http.Response {
 				dataBytes, _ := json.Marshal(github.Response{URL: "testurl"})
-				body := ioutil.NopCloser(bytes.NewBuffer(dataBytes))
+				body := io.NopCloser(bytes.NewBuffer(dataBytes))
 				return &http.Response{
 					StatusCode: http.StatusOK,
 					Body:       body,

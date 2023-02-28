@@ -8,7 +8,7 @@ type Request struct {
 	Repo    string   `json:"-"`
 	Body    string   `json:"body"`
 	Title   string   `json:"title"`
-	Labels  []string `json:"labels"`
+	Labels  []string `json:"labels,omitempty"`
 }
 
 type Response struct {
